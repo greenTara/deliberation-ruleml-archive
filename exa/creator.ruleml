@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.7/dtd/ruleml-urcbindatagroundfact.dtd">
+<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.8/dtd/ruleml-urcbindatagroundfact.dtd">
 
 
 <rulebase>
@@ -9,14 +9,49 @@
 "Ora Lassila  is the creator of  the resource http://www.w3.org/Home/Lassila."
 "http://www.w3.org/Home/Lassila  has creator  Ora Lassila." -->
 
-<if>
+<fact>
+ <_head>
   <atom>
-    <rel>Creator</rel>
-    <ur>http://www.w3.org/Home/Lassila</ur>
+    <_opr>
+      <rel href="http://dublincore.org/documents/dces/index.shtml.rdf#Creator"/>
+    </_opr>
+    <ind href="http://www.w3.org/Home/Lassila"/>
     <ind>Ora Lassila</ind>
   </atom>
-  <and/>
-</if>
+ </_head>
+</fact>
+
+
+<!-- Ground query asking for that triple -->
+
+<query>
+ <_body>
+  <atom>
+    <_opr>
+      <rel href="http://dublincore.org/documents/dces/index.shtml.rdf#Creator"/>
+    </_opr>
+    <ind href="http://www.w3.org/Home/Lassila"/>
+    <ind>Ora Lassila</ind>
+  </atom>
+ </_body>
+</query>
+
+
+<!-- Non-ground query asking for matching triples not expressible in this DTD -->
+
+<!--
+<query>
+ <_body>
+  <atom>
+    <_opr>
+      <rel href="http://dublincore.org/documents/dces/index.shtml.rdf#Creator"/>
+    </_opr>
+    <var>home page<var/>
+    <var>person<var/>
+  </atom>
+ </_body>
+</query>
+-->
 
 
 </rulebase>

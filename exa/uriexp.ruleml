@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.7/dtd/ruleml-urequalog.dtd">
+<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.8/dtd/ruleml-urequalog.dtd">
 
 
 <rulebase>
@@ -7,37 +7,46 @@
 
 <!-- a uri expander -->
 
-<if>
+<fact>
+ <_head>
   <eq>
     <nano>
-      <fun>uriexp</fun>
+      <_opf>
+        <fun>uriexp</fun>
+      </_opf>
       <ind>daml</ind>
     </nano>
-    <ur>http://www.daml.org/</ur>
+    <ind href="http://www.daml.org/"/>
   </eq>
-  <and/>
-</if>
+ </_head>
+</fact>
 
-<if>
+<fact>
+ <_head>
   <eq>
     <nano>
-      <fun>uriexp</fun>
+      <_opf>
+        <fun>uriexp</fun>
+      </_opf>
       <ind>oil</ind>
     </nano>
-    <ur>http://www.ontoknowledge.org/oil/</ur>
+    <ind href="http://www.ontoknowledge.org/oil/"/>
   </eq>
-  <and/>
-</if>
+ </_head>
+</fact>
 
-<if>
+<fact>
+ <_head>
   <eq>
     <nano>
-      <fun>uriexp</fun>
+      <_opf>
+        <fun>uriexp</fun>
+      </_opf>
       <ind>w3c</ind>
     </nano>
-    <ur>http://www.w3.org/</ur>
+    <ind href="http://www.w3.org/"/>
   </eq>
-  <and/>
-</if>
+ </_head>
+</fact>
 
 </rulebase>

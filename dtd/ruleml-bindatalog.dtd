@@ -1,5 +1,5 @@
 <!-- An XML DTD for a Binary Datalog RuleML Sublanguage -->
-<!-- Last Modification: 2001-01-24 -->
+<!-- Last Modification: 2001-06-24 -->
 
 
 
@@ -16,7 +16,11 @@
 <!-- ELEMENT Declarations -->
 
 
-<!-- atomic formulas are usable within conc's, prem's, 'and's, and 'or's -->
-<!-- atom element uses rel name followed by two arguments of two kinds -->
+<!-- atomic formulas are usable within _head's, _body's, and 'and's -->
+<!-- atom element uses an: -->
+<!-- _opr ("operator of relations") role followed by two arguments, or similarly -->
+<!-- (since roles constitute unordered elements), -->
+<!-- a sequence of two arguments followed by an _opr role -->
+<!-- the arguments may be ind(ividual)s or var(iable)s -->
 
-<!ELEMENT atom (rel, (ind | var), (ind | var))>
+<!ELEMENT atom ((_opr, (ind | var), (ind | var)) | ((ind | var), (ind | var), _opr))>

@@ -2,8 +2,6 @@
 <!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.8/dtd/ruleml-datalog-monolith.dtd">
 
 
-<!-- XML file refers both to DTD (above) and to equivalent Schema (below) -->
-
 
 <rulebase xsi:noNamespaceSchemaLocation="http://www.dfki.uni-kl.de/ruleml/xsd/0.8/ruleml-datalog-monolith.xsd"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

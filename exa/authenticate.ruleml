@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.7/dtd/ruleml-urhornlog.dtd">
+<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.8/dtd/ruleml-urhornlog.dtd">
 
 
 <rulebase>
@@ -10,46 +10,68 @@ Any person who was some time in the last 2 months an employee of
 an organization which was some time in the last 2 months a W3C member
 may register -->
 
-<if>
-  <atom>
-    <rel>may register</rel>
-    <var>any</var>
-  </atom>
-  <and>
+<imp>
+  <_head>
     <atom>
-      <rel>person</rel>
+      <_opr>
+        <rel>may register</rel>
+      </_opr>
       <var>any</var>
     </atom>
-    <atom>
-      <rel>organization</rel>
-      <var>org</var>
-    </atom>
-    <atom>
-      <rel>employee in</rel>
-      <var>any</var>
-      <var>org</var>
-      <cterm>
-        <ctor>last</ctor>
+  </_head>
+  <_body>
+    <and>
+      <atom>
+        <_opr>
+          <rel>person</rel>
+        </_opr>
+        <var>any</var>
+      </atom>
+      <atom>
+        <_opr>
+          <rel>organization</rel>
+        </_opr>
+        <var>org</var>
+      </atom>
+      <atom>
+        <_opr>
+          <rel>employee in</rel>
+        </_opr>
+        <var>any</var>
+        <var>org</var>
         <cterm>
-          <ctor>month</ctor>
-          <ind>2</ind>
+          <_opc>
+            <ctor>last</ctor>
+          </_opc>
+          <cterm>
+            <_opc>
+              <ctor>month</ctor>
+            </_opc>
+            <ind>2</ind>
+          </cterm>
         </cterm>
-      </cterm>
-    </atom>
-    <atom>
-      <rel>member in</rel>
-      <var>org</var>
-      <ur label="W3C">http://www.w3.org/</ur>
-      <cterm>
-        <ctor>last</ctor>
+      </atom>
+      <atom>
+        <_opr>
+          <rel>member in</rel>
+        </_opr>
+        <var>org</var>
+        <ind href="http://www.w3.org/">W3C</ind>
         <cterm>
-          <ctor>month</ctor>
-          <ind>2</ind>
+          <_opc>
+            <ctor>last</ctor>
+          </_opc>
+          <cterm>
+            <_opc>
+              <ctor>month</ctor>
+            </_opc>
+            <ind>2</ind>
+          </cterm>
         </cterm>
-      </cterm>
-    </atom>
-  </and>
-</if>
+      </atom>
+    </and>
+  </_body>
+</imp>
 
 
 </rulebase>

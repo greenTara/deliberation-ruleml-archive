@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.7/dtd/ruleml-urdatalog.dtd">
+<!DOCTYPE rulebase SYSTEM "http://www.ruleml.org/0.8/dtd/ruleml-urdatalog.dtd">
 
 
 <rulebase>
@@ -7,27 +7,38 @@
 
 <!-- challenge rule from RuleML site -->
 
-<if>
-  <atom>
-    <rel>may look at</rel>
-    <var>you</var>
-    <ur label="Rule-Based Systems">http://www.cs.brandeis.edu/...</ur>
-  </atom>
-  <atom>
-    <rel>want to review</rel>
-    <var>you</var>
-    <ind>rule principles</ind>
-  </atom>
-</if>
+<imp>
+  <_head>
+    <atom>
+      <_opr>
+        <rel>may look at</rel>
+      </_opr>
+      <var>you</var>
+      <ind href="http://www.cs.brandeis.edu/...">Rule-Based Systems</ind>
+    </atom>
+  </_head>
+  <_body>
+    <atom>
+      <_opr>
+        <rel>want to review</rel>
+      </_opr>
+      <var>you</var>
+      <ind>rule principles</ind>
+    </atom>
+  </_body>
+</imp>
 
-<if>
+<fact>
+ <_head>
   <atom>
-    <rel>want to review</rel>
+    <_opr>
+      <rel>want to review</rel>
+    </_opr>
     <ind>fred</ind>
     <ind>rule principles</ind>
   </atom>
-  <and/>
-</if>
+ </_head>
+</fact>
 
 
 </rulebase>

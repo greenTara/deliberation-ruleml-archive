@@ -1,33 +1,15 @@
 <!-- An XML DTD for a 'UR' Horn-Logic RuleML Sublanguage -->
-<!-- Last Modification: 2001-01-24 -->
+<!-- Last Modification: 2001-06-24 -->
 
 
 
 <!-- ENTITY Declarations -->
 
 
-<!ENTITY % urdatalog.module "IGNORE">
+<!ENTITY % hornlog.module "INCLUDE">
 
-<!ENTITY % urdatalog SYSTEM "ruleml-urdatalog.dtd">
-%urdatalog;
+<!ENTITY % hornlog SYSTEM "ruleml-hornlog.dtd">
+%hornlog;
 
-
-
-<!-- ELEMENT Declarations -->
-
-
-<!-- complex/compound/constructor terms are usable within atoms -->
-<!-- cterm element uses ctor followed by four kinds of arguments -->
- 
-<!ELEMENT cterm (ctor, (ur | ind | var | cterm)*)>
-
-
-<!-- constructors -->
-<!ELEMENT ctor (#PCDATA)>
-
-
-
-<!-- atomic formulas are usable within conc's, prem's, and 'and's -->
-<!-- atom element uses rel name followed by four kinds of arguments -->
-
-<!ELEMENT atom (rel, (ur | ind | var | cterm)*)>
+<!ENTITY % ur SYSTEM "ruleml-ur.dtd">
+%ur;
